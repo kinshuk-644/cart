@@ -9,6 +9,12 @@ class CartItem extends React.Component {
             qty: 1,
             img: ''
         }
+
+        // this.increaseQuantity = this.increaseQuantity.bind(this);
+    }
+
+    increaseQuantity = () => {
+        console.log('this.state', this.state);
     }
 
     render() {
@@ -27,9 +33,25 @@ class CartItem extends React.Component {
 
                     <div className='cart-item-actions'>
                         {/* Buttons */}
-                        <img alt='increase' className='action-icons' src='https://as1.ftcdn.net/v2/jpg/02/51/03/82/1000_F_251038282_CLb3d8tk99bGoU9ILEYS8vY215fgRmGT.jpg' />
-                        <img alt='decrease' className='action-icons' src='https://as1.ftcdn.net/v2/jpg/03/73/49/86/1000_F_373498649_nBxauQ0ipBSVrVcMpWWVmTpXu3BLvRyY.jpg' />
-                        <img alt='delete' className='action-icons' src='https://cdn-icons.flaticon.com/png/512/484/premium/484662.png?token=exp=1640255704~hmac=7280aae68b1aba11bcbb853e0a8a823c' />
+                        <img 
+                        alt='increase' 
+                        className='action-icons' 
+                        src='https://as1.ftcdn.net/v2/jpg/02/51/03/82/1000_F_251038282_CLb3d8tk99bGoU9ILEYS8vY215fgRmGT.jpg' 
+                        // onClick={this.increaseQuantity.bind(this)}
+                        onClick={this.increaseQuantity}
+                        />
+                        
+                        <img 
+                        alt='decrease' 
+                        className='action-icons' 
+                        src='https://as1.ftcdn.net/v2/jpg/03/73/49/86/1000_F_373498649_nBxauQ0ipBSVrVcMpWWVmTpXu3BLvRyY.jpg' 
+                        />
+                        
+                        <img 
+                        alt='delete' 
+                        className='action-icons' 
+                        src='https://cdn-icons.flaticon.com/png/512/484/premium/484662.png?token=exp=1640255704~hmac=7280aae68b1aba11bcbb853e0a8a823c' 
+                        />
                     </div>
                 </div>
             </div>
