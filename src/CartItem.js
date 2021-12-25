@@ -11,7 +11,28 @@ class CartItem extends React.Component {
         }
 
         // this.increaseQuantity = this.increaseQuantity.bind(this);
+        // this.testing();
     }
+
+    // testing() {
+    //     const promise = new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             resolve('done');
+    //         }, 5000);
+    //     })
+
+    //     promise.then(() => {
+
+    //         // setState acts like a synchronous call
+    //         this.setState({qty: this.state.qty + 10});
+            
+    //         this.setState({qty: this.state.qty + 10});
+
+    //         this.setState({qty: this.state.qty + 10});
+
+    //         console.log('state', this.state);
+    //     })
+    // }
 
     increaseQuantity = () => {
         // this.state.qty += 1; // react doesnt change state with this
@@ -23,12 +44,40 @@ class CartItem extends React.Component {
         //     qty: this.state.qty + 1
         // });
 
+        // this.setState({
+        //     qty: this.state.qty + 1
+        // });
+
+        // this.setState({
+        //     qty: this.state.qty + 5
+        // });
+
+        // this.setState({
+        //     qty: this.state.qty + 1
+        // });
+
         // setState form 2 - if prevState required use this
         this.setState((prevState) => {
             return {
                 qty: prevState.qty + 1
             }
+        }, () => {
+            console.log('this.state', this.state);
         });
+
+        // console.log(this.state); // asynchronous behaviour of setState
+
+        // this.setState((prevState) => {
+        //     return {
+        //         qty: prevState.qty + 1
+        //     }
+        // });
+
+        // this.setState((prevState) => {
+        //     return {
+        //         qty: prevState.qty + 1
+        //     }
+        // });
     }
 
     decreaseQuantity = () => {
@@ -46,6 +95,7 @@ class CartItem extends React.Component {
     }
 
     render() {
+        console.log('render');
         const {price, title, qty} = this.state;
         
         return (
