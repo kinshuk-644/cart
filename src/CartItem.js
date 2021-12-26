@@ -34,65 +34,65 @@ class CartItem extends React.Component {
     //     })
     // }
 
-    increaseQuantity = () => {
-        // this.state.qty += 1; // react doesnt change state with this
-        console.log('this.state', this.state);
+    // increaseQuantity = () => {
+    //     // this.state.qty += 1; // react doesnt change state with this
+    //     console.log('this.state', this.state);
 
-        // setState form 1
-        // this.setState({
-        //     title: "some new title",
-        //     qty: this.state.qty + 1
-        // });
+    //     // setState form 1
+    //     // this.setState({
+    //     //     title: "some new title",
+    //     //     qty: this.state.qty + 1
+    //     // });
 
-        // this.setState({
-        //     qty: this.state.qty + 1
-        // });
+    //     // this.setState({
+    //     //     qty: this.state.qty + 1
+    //     // });
 
-        // this.setState({
-        //     qty: this.state.qty + 5
-        // });
+    //     // this.setState({
+    //     //     qty: this.state.qty + 5
+    //     // });
 
-        // this.setState({
-        //     qty: this.state.qty + 1
-        // });
+    //     // this.setState({
+    //     //     qty: this.state.qty + 1
+    //     // });
 
-        // setState form 2 - if prevState required use this
-        this.setState((prevState) => {
-            return {
-                qty: prevState.qty + 1
-            }
-        }, () => {
-            console.log('this.state', this.state);
-        });
+    //     // setState form 2 - if prevState required use this
+    //     this.setState((prevState) => {
+    //         return {
+    //             qty: prevState.qty + 1
+    //         }
+    //     }, () => {
+    //         console.log('this.state', this.state);
+    //     });
 
-        // console.log(this.state); // asynchronous behaviour of setState
+    //     // console.log(this.state); // asynchronous behaviour of setState
 
-        // this.setState((prevState) => {
-        //     return {
-        //         qty: prevState.qty + 1
-        //     }
-        // });
+    //     // this.setState((prevState) => {
+    //     //     return {
+    //     //         qty: prevState.qty + 1
+    //     //     }
+    //     // });
 
-        // this.setState((prevState) => {
-        //     return {
-        //         qty: prevState.qty + 1
-        //     }
-        // });
-    }
+    //     // this.setState((prevState) => {
+    //     //     return {
+    //     //         qty: prevState.qty + 1
+    //     //     }
+    //     // });
+    // }
 
-    decreaseQuantity = () => {
-        const {qty} = this.state;
+    // decreaseQuantity = () => {
+    //     const {qty} = this.state;
 
-        if(qty == 0)
-            return;
+    //     if(qty == 0)
+    //         return;
 
-        // setState form 2 - if prevState required use this
-        this.setState((prevState) => {
-            return {
-                qty: prevState.qty - 1
-            }
-        });
-    }
+    //     // setState form 2 - if prevState required use this
+    //     this.setState((prevState) => {
+    //         return {
+    //             qty: prevState.qty - 1
+    //         }
+    //     });
+    // }
 
     render() {
         console.log('this.props', this.props);
@@ -116,7 +116,7 @@ class CartItem extends React.Component {
                         className='action-icons' 
                         src='https://as1.ftcdn.net/v2/jpg/02/51/03/82/1000_F_251038282_CLb3d8tk99bGoU9ILEYS8vY215fgRmGT.jpg' 
                         // onClick={this.increaseQuantity.bind(this)}
-                        onClick={this.increaseQuantity}
+                        onClick={() => this.props.onIncreaseQuantity(this.props.product)}
                         />
                         
                         <img 
