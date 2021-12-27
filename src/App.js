@@ -58,7 +58,7 @@ class App extends React.Component {
     const { products } = this.state;
     const index = products.indexOf(product);
 
-    if (products[index].qty == 0)
+    if (products[index].qty === 0)
       return;
 
     products[index].qty -= 1;
@@ -98,7 +98,10 @@ class App extends React.Component {
     let cartTotal = 0;
 
     products.map((product) => {
-      cartTotal += product.qty * product.price;
+      if(product.qty > 0)
+        cartTotal += product.qty * product.price;
+
+      return '';
     });
 
     return cartTotal;
